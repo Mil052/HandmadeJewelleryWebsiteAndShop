@@ -1,0 +1,79 @@
+.container {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 1rem 0;
+}
+
+.productList {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 0 2rem;
+    width: fit-content;
+    gap: 2rem;
+}
+
+.productList:hover {
+    cursor: grab;
+}
+
+.productList:active {
+    cursor: grabbing;
+}
+
+.productListItem {
+    flex: 0 0 296px;
+    width: 296px;
+    height: 296px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.buttonPrev, .buttonNext {
+    opacity: 0.3;
+    border: none;
+    background: transparent;
+    outline: none;
+    position: absolute;
+    top: 25%;
+    display: block;
+    height: 50%;
+    width: 3rem;
+    padding: 12px;
+}
+
+.buttonPrev {
+    left: 0;
+}
+
+.buttonNext {
+    right: 0;
+}
+
+.buttonPrev:hover, .buttonNext:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.buttonPrev:hover svg, .buttonNext:hover svg {
+    transform: scale(1.2);
+}
+
+.buttonPrev:active svg, .buttonNext:active svg {
+    transform: scale(0.9);
+}
+
+.buttonSvgPath {
+    stroke: rgb(0, 0, 0);
+}
+
+@media (min-width: 576px) {
+    .productListItem {
+        flex: 0 0 20rem;
+        width: 20rem;
+        height: 20rem;
+    }
+}

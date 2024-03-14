@@ -1,0 +1,113 @@
+.container {
+    position: relative;
+    padding: 0 8px;
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style-type: none;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.item {
+    margin-left: 0;
+    flex: 0 0 400px;
+    height: 240px;
+}
+
+.slideIn {
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+}
+
+.slideOut {
+    animation-duration: 1s;
+    animation-name: slideout;
+    animation-fill-mode: forwards;
+}
+
+.controls {
+    padding: 8px 16px;
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    background-color: white;
+}
+
+.prevButton {
+    border: none;
+    width: 48px;
+    height: 32px;
+    outline: none;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='46' viewBox='0 0 68 46' fill='none'%3E%3Cpath d='M1 23L31 1V13H67V33H31V45L1 23Z' fill='%23484E25' stroke='%23484E25' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+
+}
+
+.nextButton {
+    border: none;
+    width: 46px;
+    height: 32px;
+    outline: none;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='46' viewBox='0 0 68 46' fill='none'%3E%3Cpath d='M67 23L37 1V13H1V33H37V45L67 23Z' fill='%23484E25' stroke='%23484E25' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.prevButton:hover, .nextButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+}
+
+.prevButton:active, .nextButton:active {
+    transform: scale(0.9);
+}
+
+
+@keyframes slidein {
+    from {
+        margin-left: -432px;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes slideout {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -432px;
+    }
+}
+
+@media (min-width: 768px) {
+    .prevButton {
+        width: 5rem;
+        height: 3rem;
+    }
+
+    .nextButton {
+        width: 5rem;
+        height: 3rem;
+    }
+}

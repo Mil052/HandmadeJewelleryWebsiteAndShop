@@ -1,0 +1,171 @@
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: var(--bg-color-layout);
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hamburgerButton {
+  background-color: unset;
+  border: none;
+  outline: none;
+  display: block;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo h3 {
+  font-family: var(--font-logo-primary);
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: normal;
+}
+
+.logo h4 {
+  font-family: var(--font-logo-secondary);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* NAVIGATION */
+
+.navigationContainer {
+  position: fixed;
+  z-index: 20;
+  top: 6rem;
+  left: 0;
+  width: 0;
+  height: calc(100vh - 6rem);
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  background-color: white;
+  height: 100%;
+  width: 60vw;
+  min-width: 20rem;
+  width: 60vw;
+  padding: 3rem 2rem;
+  transition: transform 600ms ease-in-out;
+}
+
+.navigationOpen {
+  transform: translateX(100%);
+}
+
+.navigationClose{
+  transform: translateX(0);
+}
+
+.navlinkList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: var(--font-serif);
+  font-size: 24px;
+}
+
+.navIcons {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100Vw;
+  z-index: 10;
+}
+
+.backdropOpen {
+  display: block;
+}
+
+.backdropClose {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .headerContainer {
+    padding: 1rem 3rem;
+  }
+
+  .logo h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  
+  .logo h4 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .headerContainer {
+    padding: 1rem;
+  }
+
+  .hamburgerButton {
+    display: none;
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+  .navigationContainer {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .navigation {
+    position: static;
+    background-color: unset;
+    height: auto;
+    width: auto;
+    padding: 0;
+    transition: unset;
+  }
+  
+  .navigationOpen {
+    transform: none;
+  }
+  
+  .navigationClose{
+    transform: none;
+  }
+
+  .navlinkList {
+    flex-direction: row;
+  }
+
+  .backdrop {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .headerContainer {
+    padding: 1rem 4rem;
+  }
+
+}

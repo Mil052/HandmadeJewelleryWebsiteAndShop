@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Unique, handmade jewellery.",
+        "description": "To express your style and beauty.",
+        "imagePath": "/slider/wide-bracelet.png",
+        "imageAlt": "handmade bracelet",
+        "linkPath": "/shop",
+        "linkDescription": "Take a glimpse into our workshop"
+    },
+    {
+        "title": "Women's jewellery.",
+        "description": "Made with attention to every detail.",
+        "imagePath": "/slider/hair-clip.png",
+        "imageAlt": "handmade hair clip",
+        "linkPath": "/shop",
+        "linkDescription": "Take a glimpse into our workshop"
+    },
+    {
+        "title": "Earrings made of surgical steel with foam flowers.",
+        "description": "Classic proposition suitable for both everyday use and elegant occasions.",
+        "imagePath": "/slider/wide-bracelet.png",
+        "imageAlt": "handmade bracelet",
+        "linkPath": "/shop",
+        "linkDescription": "Take a glimpse into our workshop"
+    }
+]
