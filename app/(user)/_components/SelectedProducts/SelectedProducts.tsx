@@ -2,7 +2,7 @@
 
 import { motion, useAnimate, useMotionValue } from "framer-motion";
 import { useRef, useEffect, useState } from "react"; 
-import { ProductData } from '@/app/_utilities/data-fetching/fetch-data';
+import { ProductData } from '@/app/_utilities/dbRequests/dbRequests';
 import styles from './SelectedProducts.module.css';
 import ProductDigestCard from './ProductDigestCard/ProductDigestCard';
 

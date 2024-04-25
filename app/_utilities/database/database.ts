@@ -34,7 +34,6 @@ class Database {
             console.log(error);
         } finally {
             client.release();
-            console.log('client released');
         }
     }
 }

@@ -1,4 +1,4 @@
-import { ProductData } from '@/app/_utilities/data-fetching/fetch-data';
+import { ProductData } from '@/app/_utilities/dbRequests/dbRequests';
 import Link from 'next/link';
 import styles from './ProductDigestCard.module.css';
 

@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.viewAll {
+  background-color: white;
+  font-family: var(--font-sans-serif);
+  font-size: 20px;
+  line-height: 2rem;
+  color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.categorySelect {
+  position: relative;
+  font-family: var(--font-sans-serif);
+  min-width: 10rem;
+  font-size: 20px;
+  line-height: 2rem;
+  color: white;
+}
+
+.categorySelectButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggleCategoriesLabel {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.toggleCategoriesBtn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M0 0H24L12 24L0 0Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.listContainer {
+  position: absolute;
+  top: 4rem;
+  z-index: 20;
+  min-width: 100%;
+  background-color: var(--color-category-bar);
+  transition: max-height 0.5s;
+  overflow-y: hidden;
+}
+
+.listOpen {
+  max-height: 400px;
+}
+
+.listClose {
+  max-height: 0;
+}
+
+.categoryList {
+  padding: 1rem 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.activeLink {
+  color: var(--color-dominant-primary);
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding: 1rem 4rem;
+  }
+
+  .viewAll {
+    font-size: 24px;
+  }
+
+  .categorySelect {
+    min-width: 12rem;
+    font-size: 24px;
+  }
+
+  .toggleCategoriesBtn {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 864px) {
+  .categorySelectButton {
+    display: none;
+  }
+
+  .listContainer {
+    position: static;
+  }
+
+  .categoryList {
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .listOpen, .listClose  {
+    max-height: unset;
+  }
+}

@@ -1,0 +1,14 @@
+.paginationList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-family: var(--font-sans-serif);
+  font-size: 24px;
+  line-height: 2rem;
+}
+
+.activePage {
+  font-size: 32px;
+  color: var(--color-dominant-primary);
+}

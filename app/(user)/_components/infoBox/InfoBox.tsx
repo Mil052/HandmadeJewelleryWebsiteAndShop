@@ -1,5 +1,5 @@
 import styles from './InfoBox.module.css';
-import { NewsData } from '@/app/_utilities/data-fetching/fetch-data';
+import { NewsData } from '@/app/_utilities/dbRequests/dbRequests';
 
 export default function InfoBox ({ newsData }: {newsData: NewsData}) {
     return (

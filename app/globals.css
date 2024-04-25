@@ -20,7 +20,8 @@ font-family: "Marck Script", cursive;
   --font-logo-tertiary: "Marck Script", cursive;
 
   --font-button-primary: "Mohave", sans-serif;
-
+  --font-price-label: "Mohave", sans-serif;
+  
   --font-color-black: rgb(35, 35, 35);
 
   --color-dominant-primary: #B4577E;
@@ -36,6 +37,8 @@ font-family: "Marck Script", cursive;
   --link-color-primary: #131f56;
 
   --color-button-primary: #484E25;
+
+  --color-category-bar: #484E25;
  
 
   --foreground-rgb: 0, 0, 0;
@@ -74,16 +77,16 @@ svg {
 }
 
 .buttonPrimary {
+  text-align: center;
   font-family: var(--font-button-primary);
   font-size: 16px;
   line-height: 20px;
-  background-color: var(--color-button-primary);
   min-width: 8rem;
   padding: 6px 22px;
-  border: 2px solid var(--color-button-primary);
+  border-width: 2px;
+  border-style: solid;
   border-radius: 6px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-  color: white;
   cursor: pointer;
 }
 
@@ -95,7 +98,7 @@ svg {
   transform: scale(0.95);
 }
 
-.arrowLink {
+.arrowLinkLG {
   display: inline-block;
   font-family: var(--font-sans-serif);
   font-size: 20px;
@@ -104,7 +107,7 @@ svg {
   color: var(--link-color-primary);
 }
 
-.arrowLink::after {
+.arrowLinkLG::after {
   content: '\27F6';
   vertical-align: middle;
   display: inline-block;
@@ -113,12 +116,34 @@ svg {
   padding-left: 8px;
 }
 
-.arrowLink:hover {
+.arrowLinkLG:hover {
   font-weight: 500;
 }
 
-.arrowLink:active {
+.arrowLinkLG:active {
   font-weight: 300;
+}
+
+.arrowLinkSM {
+  font-family: var(--font-sans-serif);
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--link-color-primary);
+}
+
+.arrowLinkSM::after {
+  content: '\27F6';
+  vertical-align: baseline;
+  display: inline-block;
+  font-size: 24px;
+  height: 24px;
+  padding-left: 8px;
+}
+
+.arrowLinkSM:hover {
+  font-weight: 500;
 }
 
 @media (min-width: 576px) {

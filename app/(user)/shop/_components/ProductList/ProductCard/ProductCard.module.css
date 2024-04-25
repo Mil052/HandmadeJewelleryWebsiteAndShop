@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.imgContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
+.imagePrimary {
+  grid-column: 1 /2;
+  grid-row: 1 / 3;
+  display: block;
+  min-width: 7rem;
+  min-height: 5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageSecondary {
+  display: block;
+  min-width: 7rem;
+  min-height: 5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoContainer{
+  padding: 1rem 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.description {
+ flex: 1 0 11rem;
+}
+
+.description h4 {
+  font-family: var(--font-sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.description p {
+  margin: 4px 0;
+  font-family: var(--font-sans-serif);
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.priceLabel {
+  flex: 0 0 7rem;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.priceBtn {
+  border: none;
+  padding-top: 1rem;
+  background-color: var(--color-dominant-primary);
+  width: 100%;
+  height: 6rem;
+  clip-path: path(evenodd, 'M8 0C3.58172 0 0 3.58172 0 8V88C0 92.4183 3.58172 96 8 96H104C108.418 96 112 92.4183 112 88V8C112 3.58172 108.418 0 104 0H8ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z');
+}
+
+.priceBtn span {
+  display: block;
+  font-family: var(--font-price-label);
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.priceBtn:hover {
+  transform: scale(1.05);
+}
+
+.priceBtn:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 480px) {
+  .infoContainer{
+    padding: 1rem;
+  }
+
+  .description {
+    flex: 1 0 12rem;
+  }
+
+  .description h4 {
+    font-size: 20px;
+  }
+  
+  .description p {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .priceLabel {
+    flex: 0 0 8rem;
+  }
+
+  .priceBtn {
+    clip-path: path(evenodd, 'M8 0C3.58172 0 0 3.58172 0 8V88C0 92.4183 3.58172 96 8 96H120C124.418 96 128 92.4183 128 88V8C128 3.58172 124.418 0 120 0H8ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z');
+  }
+
+  .priceBtn span {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+/* 
+<svg width="128" height="96" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58172 0 0 3.58172 0 8V88C0 92.4183 3.58172 96 8 96H120C124.418 96 128 92.4183 128 88V8C128 3.58172 124.418 0 120 0H8ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" fill="#B4577E"/>
+</svg>
+*/

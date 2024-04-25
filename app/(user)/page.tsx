@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Slider from "./_components/Slider/Slider";
-import { getSliderData, getNewsData, getSelectedProductsData } from "../_utilities/data-fetching/fetch-data";
+import { getSliderData, getNewsData, getSelectedProductsData } from "../_utilities/dbRequests/dbRequests";
 import InfoBox from "./_components/InfoBox/InfoBox";
 import SelectedProducts from "./_components/SelectedProducts/SelectedProducts";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export default async function Home() {
         <h3 className={styles.selectedProductsHeader}>NEWS & BESTSELLERS</h3>
         {selectedProductsData && <SelectedProducts products={selectedProductsData}/>}
         <div className={styles.selectedProductsLink}>
-          <Link href="/shop" className="arrowLink">view all products</Link>
+          <Link href="/shop" className="arrowLinkLG">view all products</Link>
         </div>
       </section>
       <section className={styles.infoBoxContainer}>
@@ -42,7 +42,7 @@ export default async function Home() {
             <h4>Do You have question ?</h4>
             <p>Send a message via the contact form.</p>
           </div>
-          <Link href="/contact"><button className="buttonPrimary" type="button">contact us</button></Link>
+          <Link href="/contact" className={"buttonPrimary " + styles.contactBtnColor} >contact us</Link>
         </div>
       </section>
     </main>

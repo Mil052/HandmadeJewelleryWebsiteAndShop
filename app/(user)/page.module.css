@@ -124,6 +124,12 @@
   font-weight: 400;
 }
 
+.contactBtnColor {
+  background-color: var(--color-button-primary);
+  color: white;
+  border-color: var(--color-button-primary);
+}
+
 /* MEDIUM SCREEN */
 
 @media (min-width: 576px) {

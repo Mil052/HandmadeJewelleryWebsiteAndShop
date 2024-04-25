@@ -1,13 +1,31 @@
 .main {
     padding-top: 6rem;
-    display: grid;
-    grid-template-columns: 1fr;
     min-height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
     max-width: 1280px;
     margin: 0 auto;
+    background-color: var(--bg-color-primary)
   }
 
-  .main h3 {
-    text-align: center;
-    margin: 3rem 0;
+  .categoriesBar {
+    flex: 0 0 4rem;
+    background-color: var(--color-category-bar);
+  }
+
+  .products {
+    flex-grow: 1;
+  }
+
+  .separatorLine {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 2px;
+    border: none;
+    background-color: var(--color-category-bar);
+  }
+
+  .pagination {
+    flex: 0 0 4rem;
+    padding: 1rem;
   }

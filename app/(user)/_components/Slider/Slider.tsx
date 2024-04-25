@@ -1,41 +1,31 @@
 'use client'
 
 import { useState, useEffect, useRef } from "react";
-import { SliderData } from "@/app/_utilities/data-fetching/fetch-data";
+import { SliderData } from "@/app/_utilities/dbRequests/dbRequests";
 import SliderCard from "./SliderCard/SliderCard";
 import styles from "./Slider.module.css";
 
 export default function Slider ({ items, slots }:{items: SliderData[], slots: number}) {
 
-    const [[allowSliding, numberOfItems], setAllowSliding] = useState([true, items.length]);
     const [[currentItem, direction], setCurrentItem] = useState([0, 1]);
-
     const intervalRef = useRef<ReturnType<typeof setInterval>>();
 
     useEffect(() => {
-      const allowSliding = slots < numberOfItems;
-      setAllowSliding([allowSliding, items.length]);
-      if (allowSliding && !intervalRef.current) {
-        intervalRef.current = setInterval(nextSlide, 6000);
-      }
-    }, [items, slots]);
+      intervalRef.current = setInterval(nextSlide, 6000);
+      return () => clearInterval(intervalRef.current);
+    }, []);
 
-    let dispalyItems: SliderData[] = [];
+    const numberOfItems = items.length;
+    const maxSlots = numberOfItems < slots ? numberOfItems : slots;
+    const displayItems: SliderData[] = [];
 
-    if (allowSliding) { // select elements to dispaly
-      const firstItem = direction > 0 ? (numberOfItems + currentItem - 1) % numberOfItems : currentItem;
-      dispalyItems.push(items[firstItem]);
-      for (let i = 1; i <= slots; i++) {
-          dispalyItems.push(items[(firstItem + i) % numberOfItems]);
-      }
-    } else { // dispalay all elements and turn off sliding
-      dispalyItems = [...items];
+    const firstItem = direction > 0 ? (numberOfItems + currentItem - 1) % numberOfItems : currentItem;
+    displayItems.push(items[firstItem]);
+    for (let i = 1; i <= maxSlots; i++) {
+      displayItems.push(items[(firstItem + i) % numberOfItems]);
     }
 
-    let firstElementClasses = styles.item;
-    if (allowSliding) {
-      firstElementClasses = firstElementClasses + ' ' + (direction < 0 ? styles.slideIn : styles.slideOut);
-    }
+    const firstElementClasses = styles.item + ' ' + (direction < 0 ? styles.slideIn : styles.slideOut);
 
     const previousSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(numberOfItems + stateCurrentItem - 1) % numberOfItems, -1]);
     const nextSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(stateCurrentItem + 1) % numberOfItems, 1]);
@@ -57,7 +47,7 @@ export default function Slider ({ items, slots }:{items: SliderData[], slots: nu
     return (
       <div className={styles.container}>
         <ul className={styles.list}>
-            {dispalyItems.map((item, index) => {
+            {displayItems.map((item, index) => {
                 return (
                     <li key={item.id} className={index === 0 ? firstElementClasses : styles.item}>
                         <SliderCard item={item}/>
@@ -66,8 +56,8 @@ export default function Slider ({ items, slots }:{items: SliderData[], slots: nu
             })}
         </ul>
         <div className={styles.controls}>
-          <button onClick={previousSlideHandler} className={styles.prevButton} disabled={!allowSliding}> </button>
-          <button onClick={nextSlideHandler} className={styles.nextButton} disabled={!allowSliding}> </button>
+          <button onClick={previousSlideHandler} className={styles.prevButton} disabled={numberOfItems === 1}> </button>
+          <button onClick={nextSlideHandler} className={styles.nextButton} disabled={numberOfItems === 1}> </button>
         </div>
       </div>
     )

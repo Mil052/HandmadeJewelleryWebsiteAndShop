@@ -1,4 +1,4 @@
-import { SliderData } from "@/app/_utilities/data-fetching/fetch-data";
+import { SliderData } from "@/app/_utilities/dbRequests/dbRequests";
 import styles from './SliderCard.module.css';
 
 export default function SliderCard ({item}: {item: SliderData}) {
