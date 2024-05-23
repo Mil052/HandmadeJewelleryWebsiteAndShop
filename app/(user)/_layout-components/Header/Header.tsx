@@ -38,10 +38,10 @@ export default function Header () {
 							<Link href="/shop">SHOP</Link>
 						</li>
 						<li>
-							<Link href="/about">ABOUT US</Link>
+							<Link href="/contact#about-me">ABOUT ME</Link>
 						</li>
 						<li>
-							<Link href="/contact">CONTACT</Link>
+							<Link href="/contact#contact">CONTACT</Link>
 						</li>
 						<li>
 							<Link href="/terms">TERMS&CONDITIONS</Link>

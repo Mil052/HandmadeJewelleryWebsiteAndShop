@@ -4,7 +4,6 @@ class Database {
     static #instance: Database|null = null;
 
     static getDatabase() {
-        console.log(this.#instance);
         if(!this.#instance) {
             this.#instance = new Database();
         }
@@ -19,7 +18,7 @@ class Database {
             database: process.env.PGDATABASE,
             user: process.env.PGUSER,
             password: process.env.PGPASSWORD,
-            port: process.env.PGPORT ? +process.env.PGPORT : undefined
+            port: parseInt(process.env.PGPORT!),
           });
 
           this.#dbPool.on('error', (err, client) => console.error('Unexpected error on idle client', err));

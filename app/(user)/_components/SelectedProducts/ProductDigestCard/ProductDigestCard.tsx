@@ -13,7 +13,7 @@ export default function ProductDigestCard ({product}: {product: ProductData}) {
                 </div>
                 <div className={styles.price}>{product.price} PLN</div>
             </div>
-            <Link className={styles.link} href={`/shop/product?id=${product.id}`}>show product</Link>
+            <Link className={styles.link} href={`/shop/product/${product.id}`}>show product</Link>
         </div>
     )
 }

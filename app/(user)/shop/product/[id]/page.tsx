@@ -7,7 +7,6 @@ export default async function Product ({ params }: { params: { id: string } }) {
 
   const product = await getProductData(parseInt(params.id));
   const id = parseInt(params.id);
-  console.log (product);
 
   return (
     <main className={styles.main}>

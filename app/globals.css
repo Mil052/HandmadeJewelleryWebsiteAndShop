@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
 
 /*
+font-family: "Khand", sans-serif;
 font-family: "Mohave", sans-serif;
 font-family: "Marcellus SC", serif;
 font-family: "Saira Stencil One", sans-serif;
@@ -21,6 +23,8 @@ font-family: "Marck Script", cursive;
 
   --font-button-primary: "Mohave", sans-serif;
   --font-price-label: "Mohave", sans-serif;
+
+  --font-contact-data: "Khand", sans-serif;
   
   --font-color-black: rgb(35, 35, 35);
 
@@ -79,14 +83,13 @@ svg {
 .buttonPrimary {
   text-align: center;
   font-family: var(--font-button-primary);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
   min-width: 8rem;
-  padding: 6px 22px;
+  padding: 7px 22px 5px 22px;
   border-width: 2px;
   border-style: solid;
   border-radius: 6px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
@@ -151,7 +154,6 @@ svg {
     font-size: 24px;
     line-height: 32px;
     min-width: 12rem;
-    padding: 6px 22px;
   }
 
   .arrowLink {

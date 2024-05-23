@@ -1,13 +1,96 @@
 .main {
     padding-top: 6rem;
-    display: grid;
-    grid-template-columns: 1fr;
     min-height: calc(100vh - 6rem);
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  .main h3 {
+/* CONTACT SECTION */
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-position: center;
+  }
+
+  .contactDataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .contactData {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .socialMedia {
+    margin: 3rem 24px;
+    padding: 1rem 2rem;
+    background-color: var(--color-dominant-primary);   
+    font-family: var(--font-serif);
+    color: white;        
+  }
+
+  .socialMedia h3 {
+    margin: auto;
+    font-size: 28px;
+    font-weight: 400;
     text-align: center;
-    margin: 3rem 0;
+  }
+
+  .socialMedia h4 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .linksContainer {
+    margin: auto;
+    width: fit-content;
+  }
+
+  .messageFormContainer {
+    position: relative;
+
+  }
+
+  .messageForm {
+    width: 100%;
+    background-color: white;
+    padding: 2rem 1rem;
+
+  }
+
+  .messageForm h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: var(--color-dominant-primary);
+  }
+
+  @media (min-width: 576px) {
+    .socialMedia {
+      margin: 3rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .contact {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .messageFormContainer {
+      grid-column: 2 / 3;
+    }
+
+    .messageForm {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.5);
+    }
   }

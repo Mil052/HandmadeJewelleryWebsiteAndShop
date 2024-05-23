@@ -1,0 +1,20 @@
+Building for production:
+
+1. 	docker run -v C:\myCode\handmade-website:/box -it -p 8000:3000 node:20-alpine /bin/sh
+2. 	in .env.local file to access host port from inside running docker container use 'host.docker.internal'
+		https://docs.docker.com/desktop/networking/#use-cases-and-workarounds
+
+3. In next.config.mjs set:
+	const nextConfig = {
+    		output: 'standalone',
+    		images: {
+        	unoptimized: true,
+    		},
+	}
+Then run build command from box folder ('cd box' then 'npm run build')
+
+4. Running build.sh script
+chmod +x build.sh
+/box # ./build.sh
+
+5. Change name for app.js and adjust package.json file and .env.local file

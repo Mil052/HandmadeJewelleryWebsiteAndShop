@@ -10,6 +10,9 @@ export default function Slider ({ items, slots }:{items: SliderData[], slots: nu
     const [[currentItem, direction], setCurrentItem] = useState([0, 1]);
     const intervalRef = useRef<ReturnType<typeof setInterval>>();
 
+    const previousSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(numberOfItems + stateCurrentItem - 1) % numberOfItems, -1]);
+    const nextSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(stateCurrentItem + 1) % numberOfItems, 1]);
+
     useEffect(() => {
       intervalRef.current = setInterval(nextSlide, 6000);
       return () => clearInterval(intervalRef.current);
@@ -26,9 +29,6 @@ export default function Slider ({ items, slots }:{items: SliderData[], slots: nu
     }
 
     const firstElementClasses = styles.item + ' ' + (direction < 0 ? styles.slideIn : styles.slideOut);
-
-    const previousSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(numberOfItems + stateCurrentItem - 1) % numberOfItems, -1]);
-    const nextSlide = () => setCurrentItem (([stateCurrentItem, stateDirection]) => [(stateCurrentItem + 1) % numberOfItems, 1]);
 
     const nextSlideHandler = () => {
       if (intervalRef.current) {

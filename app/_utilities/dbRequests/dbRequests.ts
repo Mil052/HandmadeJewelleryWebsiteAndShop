@@ -108,14 +108,14 @@ export async function getProductsSlice (page: number, numberOfProducts: number, 
         numberOfPages: numberOfPages,
         totalNumberOfProducts: totalNumberOfProducts
 	}
-
+    
     return productsSliceData;
 }
 
 async function fetchProductDataFromDB (productID: number) {
     const db = Database.getDatabase();
     const queryString = `SELECT * FROM products WHERE id = ${productID}`;
-    const responseData = await db.query (queryString);
+    const responseData = await db.query(queryString);
     if (responseData) {
         return responseData[0] as ProductData;
     } else {
